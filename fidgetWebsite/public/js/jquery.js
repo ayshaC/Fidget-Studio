@@ -1,6 +1,5 @@
 $(document).ready(function(){
     
-    // $('#fullpage').fullpage();
 
     var clicked=false;
     var position = null;
@@ -41,11 +40,6 @@ $(document).ready(function(){
     }
 
         else{
-        // $(this).animate({
-        //         left: position
-        //    }, "slow");
-
-        // $(this).siblings().show();
         
         var FunctionOne = function () {
             // create a deferred object
@@ -70,8 +64,6 @@ $(document).ready(function(){
             $(".something h4").show();
         };
 
-        // call FunctionOne and use the `done` method
-        // with `FunctionTwo` as it's parameter
         FunctionOne().done(FunctionTwo);
         $("#clickedFrame").removeAttr('id');
 
@@ -84,23 +76,18 @@ $(document).ready(function(){
 
     $('#exit').click(function(){
         var FunctionOne = function () {
-            // create a deferred object
             var r = $.Deferred();
             $(".profileText").css({display: "none"});
-            // do whatever you want (e.g. ajax/animations other asyc tasks)
             $("#clickedFrame").animate({
                 left: position,
             }, "slow"),
             setTimeout(function () {
-                // and call `resolve` on the deferred object, once you're done
                 r.resolve();
             }, 700);
 
-            // return the deferred object
             return r;
         };
 
-        // define FunctionTwo as needed
         var FunctionTwo = function () {
             $(".profileText").css({display: "none"});
             $(".profilePhoto").css({filter: "grayscale(100%)"});
@@ -109,8 +96,6 @@ $(document).ready(function(){
             $(".something h4").show();
         };
 
-        // call FunctionOne and use the `done` method
-        // with `FunctionTwo` as it's parameter
         FunctionOne().done(FunctionTwo);
         $("#clickedFrame").removeAttr('id');
 
